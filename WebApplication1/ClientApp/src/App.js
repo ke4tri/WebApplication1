@@ -1,20 +1,68 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
+//import React, { Component } from 'react';
+import React, { useState } from'react';
+import Person from './Person/Person'
+import './App.css';
+//import anime from './Anime/anime';
 
-export default class App extends Component {
-  displayName = App.name
 
-  render() {
-    return (
-      <Layout>
-        <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
-        <Route path='/fetchdata' component={FetchData} />
-      </Layout>
-    );
-  }
+const app = props => {
+  const [ personsState, setPersonsState] = useState({
+    persons: [
+      { name: 'Max', age: 28 },
+      { name: 'Terry', age: 44 },
+      { name: 'Tom', age: 11 }
+    ],
+    otherState: 'some other value'
+  });
+
+  const switchNameHandler = () => {
+    setPersonsState({
+      persons: [
+      { name: 'MaxxThemanx', age: 28 },
+      { name: 'Terry', age: 44 },
+      { name: 'Tom', age: 11 }
+      ]
+    });
+  };
+  
+
+  return (
+    <div className="App">
+      <h1>Hi, I'm a React App</h1>
+      <p>This is really working!</p>
+      <button onClick={switchNameHandler}>Switch Name</button>
+      <Person 
+      name={personsState.persons[0].name} 
+      age={personsState.persons[0].age} />
+      <Person 
+      name={personsState.persons[1].name} 
+      age={personsState.persons[1].age} />
+      <Person 
+      name={personsState.persons[2].name} 
+      age={personsState.persons[2].age}>My Hobbies: Racing</Person>
+    </div>
+  );
+
 }
+  //render is a method  but we don't need a method using the hooks
+ 
+
+export default app;
+ 
+
+
+
+
+////BELOW IS JUST THE SAME AS THE TOP BUT EXPORTING INSDIE THE SIGNATURE
+// export default class App extends Component {
+//   displayName = App.name
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <h1>THIS IS A BLANK REACT SLATE</h1>
+//       </div>
+     
+//     );
+//   }
+// }
