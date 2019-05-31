@@ -1,29 +1,29 @@
-//import React, { Component } from 'react';
-import React, { useState } from'react';
+import React, { useState } from 'react';
 import Person from './Person/Person'
 import './App.css';
 //import anime from './Anime/anime';
 
 
 const app = props => {
-  const [ personsState, setPersonsState] = useState({
+
+ const [ personsState, setPersonsState ] = useState({
     persons: [
       { name: 'Max', age: 28 },
-      { name: 'Terry', age: 44 },
-      { name: 'Tom', age: 11 }
+      { name: 'Manu', age: 22 },
+      { name: 'Stephanie', age: 99 }
     ],
     otherState: 'some other value'
   });
-
+  
   const switchNameHandler = () => {
-    setPersonsState({
-      persons: [
-      { name: 'MaxxThemanx', age: 28 },
-      { name: 'Terry', age: 44 },
-      { name: 'Tom', age: 11 }
-      ]
-    });
-  };
+  setPersonsState({
+    persons: [
+    { name: 'MaxxThemanx', age: 28 },
+    { name: 'Terry', age: 44 },
+    { name: 'Tom', age: 11 }
+    ]
+  });
+};
   
 
   return (
@@ -44,13 +44,29 @@ const app = props => {
   );
 
 }
-  //render is a method  but we don't need a method using the hooks
  
 
 export default app;
  
 
+// const [ personsState, setPersonsState] = useState({
+//   persons: [
+//     { name: 'Max', age: 28 },
+//     { name: 'Terry', age: 44 },
+//     { name: 'Tom', age: 11 }
+//   ],
+//   otherState: 'some other value'
+// });
 
+// const switchNameHandler = () => {
+//   setPersonsState({
+//     persons: [
+//     { name: 'MaxxThemanx', age: 28 },
+//     { name: 'Terry', age: 44 },
+//     { name: 'Tom', age: 11 }
+//     ]
+//   });
+// };
 
 
 ////BELOW IS JUST THE SAME AS THE TOP BUT EXPORTING INSDIE THE SIGNATURE
